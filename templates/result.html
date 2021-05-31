@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Results</title>
+        <meta charset="utf-8">
+        <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: white;
+  color: white;
+}
+h1,h2,h3,h4 {
+  color: #fff;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+p {
+  margin: 0.5rem 0;
+}
+img {
+  width: 100%;
+}
+.wrapper {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+}
+.wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.wrapper-top {
+  position: relative;
+  z-index: 2;
+  height: 90px;
+}
+.wrapper-top a {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+}
+
+#a1 {
+  width: 170px;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-5%, -50%);
+  margin-left: 0;
+}
+.login{
+  position: relative;
+  z-index: 2;
+  width: 65%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 4rem;
+  background: rgb(40, 40, 43);
+  border-radius: 4px;
+  width: 500px;
+  height: 700px;
+  padding: 15px 68px 15px;
+  box-shadow: 5px 10px #888888;
+}
+.login__title{
+  margin-bottom: 20px;
+   font-size: 2.2rem;
+   font-weight: 600;
+   color: #fff;
+}
+.login__group {
+   position: relative;
+   z-index: 2;
+   display: flex;
+}
+.login__group__label {
+   position: absolute;
+   z-index: 150;
+   color: #b3b3b3;
+   font-size: 1rem;
+   top: 26px;
+   left: 18px;
+   transition: all 300ms ease-in;
+}
+.login__group__input {
+   width: 18rem;
+   position: relative;
+   z-index: 100;
+   background: #333;
+   margin-bottom: 20px;
+   border-radius: 4px;
+   border: none;
+   opacity: 1;
+   font-size: 1rem;
+   color: #fff;
+   line-height: 50px;
+   padding: 10px 18px 0;
+}
+.login__sign-up {
+   margin: 0px 0 12px;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   padding-right:5.9rem;
+   padding-left: 5.9rem;
+   color: #fff;
+   background: #1a9fb0;
+   font-size: 0.9rem;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+.login__sign-up:hover{
+  opacity: 0.7;
+}
+.login__secondary-cta {
+   position: relative;
+   z-index: 100;
+   display: flex;
+   justify-content: all;
+}
+.login__secondary-cta__text {
+   opacity: 1;
+   font-size: 0.9rem;
+   color: #b3b3b3;
+   text-decoration: none;
+}
+ ::placeholder {
+   font-size: 0.7rem;
+}
+.btn{
+  display: inline-block;
+  background: #1a9fb0;
+  color: #fff;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 2px;
+}
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn-rounded {
+  border-radius: 5px;
+}
+#content{
+    width: 100%;
+    position: relative;
+    background: url('https://wallpapercave.com/wp/wp3396926.jpg') no-repeat center center/cover;
+}
+        </style>
+    </head>
+    <body>
+        <header class="wrapper">
+      <div class="wrapper-top">
+        <a id="a1"><img src="https://github.com/DheerajReddy-007/Video-Streaming-Site-Front-End/blob/main/Other%20files/logo.png?raw=true" alt="Proximus" /></a>
+        <p style="position: absolute;top: 40%;right: -50px;transform: translate(-100%, -40%);color: black;">Try for some other text?</p>
+        <a href="{% url 'home' %}" class="btn btn-rounded">Text</a>
+            </div>
+        <div id="content">
+            <hr>
+                <h1 style="background-color:Tomato;text-align:center;">Prediction</h1>
+            <div class="login">
+              <div style="display: flex;"><h1 style="padding:0px 0px 35px;font-style: italic;">{{ output }}</h1><h1><mark style="background-color:rgb(65,105,225);color:white;margin-left: 5px;">N</mark>ews</h1></div>
+                <div style="background-color:rgb(245,245,220);width:500px;color:rgb(205,127,50);">
+                <h2 style="color:rgb(65, 105, 225);">Convolutional Neural Network<br> _:_ </h2><p>{{ result1 }}</p>
+              </div>
+              <hr>
+              <hr>
+                <br>
+              <div style="background-color:rgb(245,245,220);width:500px;color:rgb(205,127,50);">
+                <h2 style="color:rgb(65, 105, 225);">Logistic Regression <br>_:_</h2><p>{{ result2 }}</p>
+              </div>
+              <hr>
+              <hr>
+                <br>
+              <div style="background-color:rgb(245,245,220);width:500px;color:rgb(205,127,50);">
+                <h2 style="color:rgb(65, 105, 225);">Decision Tree Classifier<br> _:_</h2><p>{{ result3 }}</p>
+              </div>
+              <hr>
+              <hr>
+                <br>
+              <div style="background-color:rgb(245,245,220);width:500px;color:rgb(205,127,50);">
+                <h2 style="color:rgb(65, 105, 225);">Gradient Boosting Classifier<br>_:_</h2><p>{{ result4 }}</p>
+              </div>
+              <hr>
+              <hr>
+                <br>
+              <div style="background-color:rgb(245,245,220);width:500px;color:rgb(205,127,50);">
+                <h2 style="color:rgb(65, 105, 225);">Random Forest Classifier <br>_:_</h2><p>{{ result5 }}</p>
+              </div>
+            </div>
+          </div>
+    </header>
+    </body>
+</html>
